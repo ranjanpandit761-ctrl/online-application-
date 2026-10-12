@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Governance Portal | Online Jati, Niwas, Aay Services - Managed by Ranjan Pandit</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        govNavy: '#0f172a',
+                        govBlue: '#1d4ed8',
+                        govBlueLight: '#2563eb',
+                        govTeal: '#0d9488',
+                        govSaffron: '#d97706',
+                        govBg: '#ffffff',
+                        govSlate: '#f8fafc',
+                        govBorder: '#e2e8f0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        .light-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+        }
+        .light-card-hover {
+            transition: all 0.25s ease-in-out;
+        }
+        .light-card-hover:hover {
+            border-color: #93c5fd;
+            box-shadow: 0 12px 30px -4px rgba(37, 99, 235, 0.12);
+            transform: translateY(-2px);
+        }
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(#cbd5e1 0.75px, transparent 0.75px), radial-gradient(#cbd5e1 0.75px, #ffffff 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        .badge-free {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        .badge-saffron {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printableReceipt, #printableReceipt * {
+                visibility: visible;
+            }
+            #printableReceipt {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-blue-100 selection:text-blue-900">
+
+    <div>
+        <!-- Top Emergency & Helpline Announcement Bar -->
+        <div class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center gap-2 overflow-hidden w-full sm:w-auto">
+                    <span class="badge-saffron text-white font-extrabold text-[10px] px-2 py-0.5 rounded uppercase tracking-wider shrink-0">100% FREE</span>
+                    <p class="truncate text-slate-300 font-medium">
+                        Official RTPS Portal — Fast Track Certificate Generation | Handled by <strong class="text-amber-400">Ranjan Pandit</strong>
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 text-xs shrink-0">
+                    <a href="tel:8114581588" class="text-slate-200 hover:text-white flex items-center gap-1.5 font-bold transition">
+                        <i class="fa-solid fa-phone-volume text-amber-400 animate-pulse"></i> 
+                        Helpline: <span class="text-blue-300 underline font-black">8114581588</span>
+                    </a>
+                    <span class="text-slate-700">|</span>
+                    <a href="https://wa.me/918114581588?text=Hello%20Ranjan%20Pandit%20Sir,%20I%20need%20help%20with%20my%20Certificate%20Application" target="_blank" class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 font-bold">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Support
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Header -->
+        <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+                
+                <!-- Logo & Branding -->
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl shadow-md flex items-center justify-center text-white text-2xl font-black">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h1 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">e-Cert Portal</h1>
+                            <span class="bg-blue-50 text-blue-700 border border-blue-200 text-[10px] font-bold px-2 py-0.5 rounded-full">RTPS Verified</span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-medium hidden sm:block">
+                            Caste (जाति), Residence (निवास) & Income (आय) Services
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Admin & Helpline Quick Action Badge -->
+                <div class="flex items-center gap-3">
+                    <!-- Manager Badge -->
+                    <div class="hidden lg:flex items-center gap-3 bg-slate-50 border border-slate-200 px-3.5 py-1.5 rounded-xl">
+                        <div class="w-8 h-8 rounded-lg bg-slate-900 text-amber-400 font-extrabold flex items-center justify-center text-xs">
+                            RP
+                        </div>
+                        <div class="text-left text-xs">
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Portal Desk Head</span>
+                            <span class="font-bold text-slate-800">Ranjan Pandit</span>
+                        </div>
+                    </div>
+
+                    <!-- Direct Call Button -->
+                    <a href="tel:8114581588" class="bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-headset text-amber-600 text-sm"></i>
+                        <span class="hidden sm:inline">Helpdesk:</span> 
+                        <span class="font-extrabold">8114581588</span>
+                    </a>
+
+                    <!-- Apply Now CTA -->
+                    <a href="#applySection" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl text-xs sm:text-sm shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-file-signature"></i> 
+                        <span>Apply Online Free</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Banner Section -->
+        <section class="hero-pattern py-12 sm:py-16 border-b border-slate-200 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold px-4 py-1.5 rounded-full mb-6 shadow-sm">
+                    <i class="fa-solid fa-shield-check text-emerald-600"></i> Free Public Certificate Issuance Desk
+                </div>
+
+                <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight mb-4">
+                    Apply Online for <span class="text-blue-600">Jati</span>, <span class="text-emerald-600">Niwas</span> & <span class="text-amber-600">Aay</span> Certificates
+                </h2>
+
+                <p class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base font-normal leading-relaxed mb-8">
+                    100% Free online citizen service portal for Bihari residents. Verified & handled under the supervision of <strong class="text-slate-900 underline underline-offset-4 decoration-blue-500">Ranjan Pandit</strong>. Need instant support? Contact Helpline <a href="tel:8114581588" class="text-blue-600 font-bold hover:underline">8114581588</a>.
+                </p>
+
+                <!-- Status Search Bar Box -->
+                <div class="max-w-xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl p-2.5 flex flex-col sm:flex-row gap-2 mb-10">
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
+                        <input type="text" id="quickRefInput" placeholder="Enter Ref ID (e.g. BR-2026-JAT-81145)" class="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-900 font-medium">
+                    </div>
+                    <button onclick="quickCheckStatus()" class="bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold py-2.5 px-6 rounded-xl transition flex items-center justify-center gap-2 shadow shrink-0">
+                        <i class="fa-solid fa-chart-line"></i> Track Application Status
+                    </button>
+                </div>
+
+                <!-- Three Certificate Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
+                    
+                    <!-- Jati Card -->
+                    <div onclick="selectCertificateType('jati')" class="cursor-pointer light-card light-card-hover rounded-2xl p-6 relative group">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-address-card"></i>
+                            </div>
+                            <span class="badge-free text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-sm">निःशुल्क / FREE</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Caste (जाति) Certificate</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm mb-4">Required for reservations, educational scholarships, and government job applications.</p>
+                        <div class="flex items-center text-xs font-bold text-blue-600 gap-1.5">
+                            <span>Apply Now</span> <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Niwas Card -->
+                    <div onclick="selectCertificateType('niwas')" class="cursor-pointer light-card light-card-hover rounded-2xl p-6 relative group">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-house-user"></i>
+                            </div>
+                            <span class="badge-free text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-sm">निःशुल्क / FREE</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Residence (निवास) Certificate</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm mb-4">Official permanent residential domicile proof required for local state verification.</p>
+                        <div class="flex items-center text-xs font-bold text-emerald-600 gap-1.5">
+                            <span>Apply Now</span> <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <!-- Aay Card -->
+                    <div onclick="selectCertificateType('aay')" class="cursor-pointer light-card light-card-hover rounded-2xl p-6 relative group">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                            </div>
+                            <span class="badge-free text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-sm">निःशुल्क / FREE</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-1">Income (आय) Certificate</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm mb-4">Annual family income document essential for fee concessions and subsidy schemes.</p>
+                        <div class="flex items-center text-xs font-bold text-amber-600 gap-1.5">
+                            <span>Apply Now</span> <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Form Application Section -->
+        <main id="applySection" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            
+            <div class="bg-white border border-slate-200 rounded-3xl shadow-xl overflow-hidden">
+                
+                <!-- Form Header Bar -->
+                <div class="bg-slate-900 p-6 sm:p-8 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400">RTPS Online Submission Desk</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white" id="formTitleText">Application for Jati (Caste) Certificate</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Supervised by <strong class="text-white underline decoration-amber-400">Ranjan Pandit</strong> | Helpline: <strong class="text-amber-400">8114581588</strong></p>
+                    </div>
+
+                    <!-- Tabs Switcher -->
+                    <div class="flex bg-slate-800 p-1.5 rounded-2xl border border-slate-700 self-stretch md:self-auto justify-center">
+                        <button type="button" onclick="setTab('jati')" id="tabJatiBtn" class="px-5 py-2 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow">Jati</button>
+                        <button type="button" onclick="setTab('niwas')" id="tabNiwasBtn" class="px-5 py-2 rounded-xl text-xs font-bold transition text-slate-300 hover:text-white">Niwas</button>
+                        <button type="button" onclick="setTab('aay')" id="tabAayBtn" class="px-5 py-2 rounded-xl text-xs font-bold transition text-slate-300 hover:text-white">Aay</button>
+                    </div>
+                </div>
+
+                <!-- Form Body -->
+                <form id="certificateForm" onsubmit="handleFormSubmission(event)" class="p-6 sm:p-10 space-y-10">
+                    
+                    <!-- Section 1: Personal Information -->
+                    <div>
+                        <div class="flex items-center gap-3 pb-3 border-b border-slate-200 mb-6">
+                            <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-black text-sm">1</div>
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">Personal Details of Applicant</h4>
+                                <p class="text-xs text-slate-500">Provide details exactly as printed on your Aadhaar UID card.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Full Name (English) <span class="text-red-500">*</span></label>
+                                <input type="text" required name="fullName" placeholder="e.g. Ramesh Kumar Pandit" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Father's Name <span class="text-red-500">*</span></label>
+                                <input type="text" required name="fatherName" placeholder="e.g. Mahendra Pandit" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Mother's Name <span class="text-red-500">*</span></label>
+                                <input type="text" required name="motherName" placeholder="e.g. Devi Devi" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Date of Birth <span class="text-red-500">*</span></label>
+                                <input type="date" required name="dob" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Gender <span class="text-red-500">*</span></label>
+                                <select required name="gender" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male (पुरुष)</option>
+                                    <option value="Female">Female (महिला)</option>
+                                    <option value="Third Gender">Third Gender</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">12-Digit Aadhaar UID <span class="text-red-500">*</span></label>
+                                <input type="text" required pattern="[0-9]{12}" name="aadhaar" placeholder="1234 5678 9012" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Mobile Number <span class="text-red-500">*</span></label>
+                                <input type="tel" required pattern="[0-9]{10}" name="mobile" placeholder="10-digit mobile number" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Email Address</label>
+                                <input type="email" name="email" placeholder="applicant@example.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Social Category <span class="text-red-500">*</span></label>
+                                <select required name="category" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                                    <option value="">Select Category</option>
+                                    <option value="Extremely Backward Class (EBC / BC-I)">EBC / BC-I (अत्यंत पिछड़ा वर्ग)</option>
+                                    <option value="Backward Class (BC / BC-II)">BC / BC-II (पिछड़ा वर्ग)</option>
+                                    <option value="Scheduled Caste (SC)">SC (अनुसूचित जाति)</option>
+                                    <option value="Scheduled Tribe (ST)">ST (अनुसूचित जनजाति)</option>
+                                    <option value="Unreserved / General">Unreserved / General (अनारक्षित)</option>
+                                </select>
+                            </div>
+
+                            <!-- Dynamic Income Field (Only when Aay tab is active) -->
+                            <div id="incomeFieldContainer" style="display: none;">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-amber-700 mb-1.5">Total Annual Income (₹) <span class="text-red-500">*</span></label>
+                                <input type="number" id="incomeInput" name="income" placeholder="e.g. 90000" class="w-full bg-amber-50/50 border border-amber-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Residential Address -->
+                    <div>
+                        <div class="flex items-center gap-3 pb-3 border-b border-slate-200 mb-6">
+                            <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-black text-sm">2</div>
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">Residential Address Details</h4>
+                                <p class="text-xs text-slate-500">Provide complete official address inside Bihar state.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">State</label>
+                                <input type="text" readonly value="Bihar" class="w-full bg-slate-200 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold text-slate-700 cursor-not-allowed">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">District <span class="text-red-500">*</span></label>
+                                <input type="text" required name="district" placeholder="e.g. Patna, Muzaffarpur, Gaya" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Sub-Division (अनुमंडल) <span class="text-red-500">*</span></label>
+                                <input type="text" required name="subDivision" placeholder="e.g. Patna Sadar" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Block / Circle (प्रखंड) <span class="text-red-500">*</span></label>
+                                <input type="text" required name="block" placeholder="e.g. Danapur" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Panchayat / Urban Ward <span class="text-red-500">*</span></label>
+                                <input type="text" required name="panchayat" placeholder="e.g. Ward No. 14 / Gram Panchayat" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Village / Town / Mohalla <span class="text-red-500">*</span></label>
+                                <input type="text" required name="village" placeholder="e.g. Main Market Road" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Postal PIN Code <span class="text-red-500">*</span></label>
+                                <input type="text" required pattern="[0-9]{6}" name="pincode" placeholder="800001" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Photo & Signature Upload -->
+                    <div>
+                        <div class="flex items-center gap-3 pb-3 border-slate-200 border-b mb-6">
+                            <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-black text-sm">3</div>
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">Photo & Digital Signature Upload Section</h4>
+                                <p class="text-xs text-slate-500">Upload high clarity scanned images (JPG / PNG format).</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            
+                            <!-- Passport Photo Box -->
+                            <div class="border-2 border-dashed border-slate-300 hover:border-blue-500 bg-slate-50/50 hover:bg-blue-50/30 rounded-2xl p-6 text-center transition relative group">
+                                <input type="file" required accept="image/*" onchange="handleFilePreview(event, 'photoPreview', 'photoPlaceholder')" class="absolute inset-0 opacity-0 cursor-pointer z-10">
+                                
+                                <div id="photoPlaceholder" class="flex flex-col items-center">
+                                    <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-3 group-hover:scale-105 transition-transform">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </div>
+                                    <h5 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-1">Passport Size Photo</h5>
+                                    <p class="text-[11px] text-slate-500 mb-3">Clear front-facing photo (Max 2MB)</p>
+                                    <span class="bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-lg shadow-sm">Upload Photo</span>
+                                </div>
+
+                                <div id="photoPreviewContainer" class="hidden flex-col items-center">
+                                    <img id="photoPreview" src="" alt="Photo Preview" class="w-24 h-28 object-cover rounded-xl border-2 border-blue-500 shadow-md mb-2">
+                                    <span class="text-xs font-bold text-emerald-600 flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Photo Uploaded</span>
+                                    <span class="text-[10px] text-slate-400 mt-0.5">Click box to replace file</span>
+                                </div>
+                            </div>
+
+                            <!-- Signature Box -->
+                            <div class="border-2 border-dashed border-slate-300 hover:border-amber-500 bg-slate-50/50 hover:bg-amber-50/30 rounded-2xl p-6 text-center transition relative group">
+                                <input type="file" required accept="image/*" onchange="handleFilePreview(event, 'sigPreview', 'sigPlaceholder')" class="absolute inset-0 opacity-0 cursor-pointer z-10">
+                                
+                                <div id="sigPlaceholder" class="flex flex-col items-center">
+                                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-3 group-hover:scale-105 transition-transform">
+                                        <i class="fa-solid fa-file-signature"></i>
+                                    </div>
+                                    <h5 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-1">Applicant Signature</h5>
+                                    <p class="text-[11px] text-slate-500 mb-3">Signature on plain white paper (Max 2MB)</p>
+                                    <span class="bg-slate-900 text-white text-xs font-bold px-4 py-1.5 rounded-lg shadow-sm">Upload Signature</span>
+                                </div>
+
+                                <div id="sigPreviewContainer" class="hidden flex-col items-center">
+                                    <img id="sigPreview" src="" alt="Signature Preview" class="w-36 h-20 object-contain bg-white rounded-xl border-2 border-amber-500 p-1 shadow-md mb-2">
+                                    <span class="text-xs font-bold text-emerald-600 flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Signature Uploaded</span>
+                                    <span class="text-[10px] text-slate-400 mt-0.5">Click box to replace file</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Document Attachments -->
+                    <div>
+                        <div class="flex items-center gap-3 pb-3 border-slate-200 border-b mb-6">
+                            <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-black text-sm">4</div>
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">Attached Government Identification Document</h4>
+                                <p class="text-xs text-slate-500">Attach self-attested proof document for verification.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Select Document Type <span class="text-red-500">*</span></label>
+                                <select required name="docType" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 transition">
+                                    <option value="Aadhaar Card">Aadhaar Card (आधार कार्ड)</option>
+                                    <option value="Voter ID Card">Voter ID Card (मतदाता पहचान पत्र)</option>
+                                    <option value="Ration Card">Ration Card (राशन कार्ड)</option>
+                                    <option value="Driving License / Passport">Driving License / Passport</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Upload Scanned Document File <span class="text-red-500">*</span></label>
+                                <input type="file" required accept=".pdf,image/*" name="docFile" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-slate-900 file:text-white hover:file:bg-slate-800 cursor-pointer bg-slate-50 border border-slate-300 rounded-xl p-1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Declaration and Submit Box -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" required class="w-4 h-4 mt-0.5 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                            <span class="text-xs text-slate-600 leading-relaxed">
+                                I hereby declare that all information provided in this online application form is true and correct to the best of my knowledge. I understand that submitting false credentials will lead to immediate cancellation under government rules.
+                            </span>
+                        </label>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-200">
+                            <div class="text-xs text-slate-500">
+                                <span class="font-bold text-slate-800">Helpline Query Support:</span> Call <a href="tel:8114581588" class="text-blue-600 font-extrabold underline">8114581588</a> (Officer: Ranjan Pandit)
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-extrabold px-8 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-solid fa-paper-plane"></i> Submit Application & Generate Receipt
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </main>
+
+        <!-- Live Status Tracker Section -->
+        <section id="trackerSection" class="bg-white py-12 border-t border-b border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-8">
+                    <span class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-200">Live RTPS Tracker</span>
+                    <h3 class="text-2xl font-black text-slate-900 mt-2">Check Real-Time Application Status</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-1">Enter your Application Reference Number to trace signature & approval status.</p>
+                </div>
+
+                <div class="light-card rounded-2xl p-6 max-w-2xl mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                        <input type="text" id="statusTrackerInput" placeholder="Enter Ref ID e.g. BR-2026-JAT-81145" class="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-blue-600 font-semibold">
+                        <button onclick="searchApplicationStatus()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl transition text-xs sm:text-sm flex items-center justify-center gap-2 shadow">
+                            <i class="fa-solid fa-magnifying-glass"></i> Check Status
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Output Box -->
+                    <div id="statusResultBox" class="hidden border-t border-slate-200 pt-6">
+                        <!-- Result populated via JS -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Admin Supervision Dashboard Preview -->
+        <section class="py-12 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
+                    <div>
+                        <div class="flex items-center gap-2 text-xs font-bold text-amber-600">
+                            <i class="fa-solid fa-user-shield"></i> Portal Supervision Desk
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900">Live Applications Handled by Ranjan Pandit</h3>
+                        <p class="text-xs sm:text-sm text-slate-500">Real-time e-governance certificate dispatch activity monitor.</p>
+                    </div>
+
+                    <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm text-xs font-bold text-slate-700">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span> Live Desk Active (Helpline: 8114581588)
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm">
+                        <thead class="bg-slate-100 text-slate-700 font-extrabold uppercase tracking-wider text-[11px] border-b border-slate-200">
+                            <tr>
+                                <th class="p-4">Reference ID</th>
+                                <th class="p-4">Applicant Name</th>
+                                <th class="p-4">Certificate Type</th>
+                                <th class="p-4">District</th>
+                                <th class="p-4">Officer In-Charge</th>
+                                <th class="p-4">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 font-medium text-slate-800">
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-mono font-bold text-blue-600">BR-2026-JAT-81145</td>
+                                <td class="p-4 font-bold">Aman Sharma</td>
+                                <td class="p-4"><span class="bg-blue-50 text-blue-700 px-2.5 py-1 rounded-md text-xs font-bold">Jati (Caste)</span></td>
+                                <td class="p-4">Patna</td>
+                                <td class="p-4 font-bold text-slate-900">Ranjan Pandit</td>
+                                <td class="p-4"><span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full text-xs font-bold flex items-center gap-1 w-fit"><i class="fa-solid fa-circle-check text-[10px]"></i> Approved</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-mono font-bold text-blue-600">BR-2026-NIW-92014</td>
+                                <td class="p-4 font-bold">Pooja Kumari</td>
+                                <td class="p-4"><span class="bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-md text-xs font-bold">Niwas (Residence)</span></td>
+                                <td class="p-4">Muzaffarpur</td>
+                                <td class="p-4 font-bold text-slate-900">Ranjan Pandit</td>
+                                <td class="p-4"><span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full text-xs font-bold flex items-center gap-1 w-fit"><i class="fa-solid fa-clock text-[10px]"></i> Under Review</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-4 font-mono font-bold text-blue-600">BR-2026-AAY-30198</td>
+                                <td class="p-4 font-bold">Rajesh Kumar Pandit</td>
+                                <td class="p-4"><span class="bg-amber-50 text-amber-700 px-2.5 py-1 rounded-md text-xs font-bold">Aay (Income)</span></td>
+                                <td class="p-4">Gaya</td>
+                                <td class="p-4 font-bold text-slate-900">Ranjan Pandit</td>
+                                <td class="p-4"><span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full text-xs font-bold flex items-center gap-1 w-fit"><i class="fa-solid fa-circle-check text-[10px]"></i> Approved</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-12 bg-white border-b border-slate-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-extrabold text-blue-600 uppercase tracking-widest">Clear Doubts</span>
+                    <h3 class="text-2xl font-black text-slate-900 mt-1">Frequently Asked Questions</h3>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="bg-slate-50 border border-slate-200 rounded-2xl p-4 cursor-pointer group">
+                        <summary class="font-bold text-slate-900 text-sm flex justify-between items-center">
+                            <span>Is there any fee charged for submitting Jati, Niwas, or Aay form?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+                            No! This service is 100% Free under citizen welfare e-governance initiatives handled by <strong>Ranjan Pandit</strong>. Never pay any fees to anyone.
+                        </p>
+                    </details>
+
+                    <details class="bg-slate-50 border border-slate-200 rounded-2xl p-4 cursor-pointer group">
+                        <summary class="font-bold text-slate-900 text-sm flex justify-between items-center">
+                            <span>How do I contact official support if my application is delayed?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+                            You can directly call our official Helpline Number <strong class="text-blue-600">8114581588</strong> or send a WhatsApp message with your Reference ID to get instant status updates.
+                        </p>
+                    </details>
+
+                    <details class="bg-slate-50 border border-slate-200 rounded-2xl p-4 cursor-pointer group">
+                        <summary class="font-bold text-slate-900 text-sm flex justify-between items-center">
+                            <span>What documents are mandatory for uploading?</span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+                            You must upload a clear Passport Size Photo, Applicant Signature, and an ID proof such as Aadhaar Card, Voter ID, or Ration Card.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal: Submission Receipt (Printable Slip) -->
+        <div id="receiptModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+            <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200 text-slate-900 max-h-[90vh] overflow-y-auto">
+                
+                <div class="flex justify-between items-start pb-4 border-b border-slate-200 mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-xl font-black">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-black text-slate-900">Application Submitted!</h3>
+                            <p class="text-xs text-slate-500">Official Acknowledgement Receipt</p>
+                        </div>
+                    </div>
+                    <button onclick="closeReceiptModal()" class="text-slate-400 hover:text-slate-700 text-lg">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Printable Document Box -->
+                <div id="printableReceipt" class="border border-slate-200 rounded-2xl p-6 bg-slate-50/50 space-y-4 text-xs">
+                    
+                    <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                        <div>
+                            <h4 class="font-black text-base text-slate-900" id="receiptCertTitle">Jati Certificate Application</h4>
+                            <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Government Citizen Service Desk</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] text-slate-400 block font-bold uppercase">Reference ID</span>
+                            <span class="text-sm font-black font-mono text-blue-600" id="receiptRefNo">BR-2026-JAT-00000</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Applicant Name</span>
+                            <span class="font-bold text-slate-900" id="receiptName">-</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Father's Name</span>
+                            <span class="font-bold text-slate-900" id="receiptFather">-</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Mobile Number</span>
+                            <span class="font-bold text-slate-900" id="receiptMobile">-</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Aadhaar UID</span>
+                            <span class="font-bold text-slate-900" id="receiptAadhaar">-</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">District / Sub-Division</span>
+                            <span class="font-bold text-slate-900" id="receiptDistrict">-</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block text-[10px] uppercase font-bold">Submission Date</span>
+                            <span class="font-bold text-slate-900" id="receiptDate">October 12, 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-xl p-3 flex justify-between items-center">
+                        <div>
+                            <span class="text-[10px] text-blue-700 font-bold block">Supervisor In-Charge</span>
+                            <span class="font-extrabold text-slate-900">Ranjan Pandit</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] text-blue-700 font-bold block">Official Helpline</span>
+                            <span class="font-black text-blue-700">8114581588</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button onclick="window.print()" class="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-4 rounded-xl transition text-xs flex items-center justify-center gap-2 shadow">
+                        <i class="fa-solid fa-print"></i> Print Receipt
+                    </button>
+                    <button onclick="closeReceiptModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3 px-4 rounded-xl transition text-xs">
+                        Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 text-slate-300 pt-12 pb-8 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <h4 class="text-lg font-black text-white">e-Governance Certificate Desk</h4>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Providing online application support for Bihar residents to issue Caste, Domicile, and Income certificates free of cost.
+                    </p>
+                    <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold px-3 py-1.5 rounded-lg">
+                        <i class="fa-solid fa-user-check"></i> Supervised by Ranjan Pandit
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-3">Quick Navigation</h5>
+                    <ul class="space-y-2 text-xs font-semibold">
+                        <li><a href="#applySection" onclick="setTab('jati')" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-blue-500"></i> Apply Jati Certificate</a></li>
+                        <li><a href="#applySection" onclick="setTab('niwas')" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-blue-500"></i> Apply Niwas Certificate</a></li>
+                        <li><a href="#applySection" onclick="setTab('aay')" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-blue-500"></i> Apply Aay Certificate</a></li>
+                        <li><a href="#trackerSection" class="hover:text-white transition flex items-center gap-2"><i class="fa-solid fa-angle-right text-blue-500"></i> Check Status Online</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-3">Contact Support</h5>
+                    <div class="space-y-2 text-xs">
+                        <p class="flex items-center gap-2 text-white font-bold text-sm">
+                            <i class="fa-solid fa-phone text-amber-400"></i> Helpline: <a href="tel:8114581588" class="text-amber-400 underline">8114581588</a>
+                        </p>
+                        <p class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-user-tie text-blue-400"></i> Admin Head: Ranjan Pandit
+                        </p>
+                        <p class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-envelope text-blue-400"></i> Support: help@bihar-ecert.in
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-2">
+                <p>&copy; 2026 e-Governance Certificate Portal. All rights reserved.</p>
+                <p class="font-semibold text-slate-400">Direct Helpline: <span class="text-amber-400 font-bold">8114581588</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let currentTab = 'jati';
+
+        function setTab(tab) {
+            currentTab = tab;
+            const formTitle = document.getElementById('formTitleText');
+            const tabJatiBtn = document.getElementById('tabJatiBtn');
+            const tabNiwasBtn = document.getElementById('tabNiwasBtn');
+            const tabAayBtn = document.getElementById('tabAayBtn');
+            const incomeContainer = document.getElementById('incomeFieldContainer');
+            const incomeInput = document.getElementById('incomeInput');
+
+            // Reset tab styles
+            tabJatiBtn.className = "px-5 py-2 rounded-xl text-xs font-bold transition text-slate-300 hover:text-white";
+            tabNiwasBtn.className = "px-5 py-2 rounded-xl text-xs font-bold transition text-slate-300 hover:text-white";
+            tabAayBtn.className = "px-5 py-2 rounded-xl text-xs font-bold transition text-slate-300 hover:text-white";
+
+            if (tab === 'jati') {
+                formTitle.innerText = "Application for Jati (Caste) Certificate";
+                tabJatiBtn.className = "px-5 py-2 rounded-xl text-xs font-bold transition bg-blue-600 text-white shadow";
+                incomeContainer.style.display = 'none';
+                incomeInput.removeAttribute('required');
+            } else if (tab === 'niwas') {
+                formTitle.innerText = "Application for Niwas (Residence) Certificate";
+                tabNiwasBtn.className = "px-5 py-2 rounded-xl text-xs font-bold transition bg-emerald-600 text-white shadow";
+                incomeContainer.style.display = 'none';
+                incomeInput.removeAttribute('required');
+            } else if (tab === 'aay') {
+                formTitle.innerText = "Application for Aay (Income) Certificate";
+                tabAayBtn.className = "px-5 py-2 rounded-xl text-xs font-bold transition bg-amber-600 text-white shadow";
+                incomeContainer.style.display = 'block';
+                incomeInput.setAttribute('required', 'true');
+            }
+        }
+
+        function selectCertificateType(type) {
+            setTab(type);
+            document.getElementById('applySection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleFilePreview(event, previewImgId, placeholderId) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(previewImgId).src = e.target.result;
+                    document.getElementById(placeholderId).classList.add('hidden');
+                    document.getElementById(previewImgId + 'Container').classList.remove('hidden');
+                    document.getElementById(previewImgId + 'Container').classList.add('flex');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+
+            const titles = {
+                'jati': 'Jati (Caste) Certificate Application',
+                'niwas': 'Niwas (Residence) Certificate Application',
+                'aay': 'Aay (Income) Certificate Application'
+            };
+
+            const randomRef = 'BR-2026-' + currentTab.toUpperCase() + '-' + Math.floor(10000 + Math.random() * 90000);
+
+            document.getElementById('receiptCertTitle').innerText = titles[currentTab];
+            document.getElementById('receiptRefNo').innerText = randomRef;
+            document.getElementById('receiptName').innerText = formData.get('fullName');
+            document.getElementById('receiptFather').innerText = formData.get('fatherName');
+            document.getElementById('receiptMobile').innerText = formData.get('mobile');
+
+            const aadhaar = formData.get('aadhaar') || '123456789012';
+            document.getElementById('receiptAadhaar').innerText = 'XXXX-XXXX-' + aadhaar.slice(-4);
+            document.getElementById('receiptDistrict').innerText = (formData.get('district') || 'Patna') + ' / ' + (formData.get('subDivision') || 'Sadar');
+
+            document.getElementById('receiptModal').classList.remove('hidden');
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receiptModal').classList.add('hidden');
+            document.getElementById('certificateForm').reset();
+            
+            // Reset image preview boxes
+            document.getElementById('photoPlaceholder').classList.remove('hidden');
+            document.getElementById('photoPreviewContainer').classList.add('hidden');
+            document.getElementById('sigPlaceholder').classList.remove('hidden');
+            document.getElementById('sigPreviewContainer').classList.add('hidden');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function quickCheckStatus() {
+            const val = document.getElementById('quickRefInput').value;
+            if(!val) {
+                alert('Please enter a valid Reference ID e.g. BR-2026-JAT-81145');
+                return;
+            }
+            document.getElementById('statusTrackerInput').value = val;
+            searchApplicationStatus();
+            document.getElementById('trackerSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchApplicationStatus() {
+            const refId = document.getElementById('statusTrackerInput').value.trim();
+            const resultBox = document.getElementById('statusResultBox');
+
+            if (!refId) {
+                alert('Please enter your Reference ID to check status.');
+                return;
+            }
+
+            resultBox.classList.remove('hidden');
+            resultBox.innerHTML = `
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="font-mono font-bold text-xs text-blue-700">${refId.toUpperCase()}</span>
+                        <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full">APPROVED & SIGNED</span>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-700">
+                        <p><strong>Desk Admin In-Charge:</strong> Ranjan Pandit</p>
+                        <p><strong>Official Contact:</strong> 8114581588</p>
+                        <p class="text-emerald-700 font-bold mt-2"><i class="fa-solid fa-circle-check"></i> Certificate is verified and ready for download.</p>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
